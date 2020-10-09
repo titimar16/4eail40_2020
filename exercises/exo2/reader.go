@@ -12,16 +12,14 @@ type spaceEraser struct {
 
 func (tr spaceEraser) Read(buf []byte) (int, error) {
 	n, err := tr.r.Read(buf)
-	var myslice []string
-	sli := strings.Split(string(buf), "")
-	for _, el := range sli {
-		if el != " " {
-			myslice = append(myslice, el)
+	j := 0
+	for i:= 0; i < n; i++ {
+		if buf[i] != 32 {
+			buf[j] = buf[i]
+			j++
 		}
 	}
-	final := []byte(strings.Join(myslice, ""))
-	copy(buf, final)
-	return n, err
+	return j, err
 }
 
 func main() {
