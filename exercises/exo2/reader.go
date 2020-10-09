@@ -13,7 +13,7 @@ type spaceEraser struct {
 func (tr spaceEraser) Read(buf []byte) (int, error) {
 	n, err := tr.r.Read(buf)
 	j := 0
-	for i:= 0; i < n; i++ {
+	for i := 0; i < n; i++ {
 		if buf[i] != 32 {
 			buf[j] = buf[i]
 			j++
