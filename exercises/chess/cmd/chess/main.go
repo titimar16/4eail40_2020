@@ -5,8 +5,6 @@ import (
 	"fmt"
 	"os"
 	"strings"
-
-	"github.com/jglouis/4eail40_2020/exercises/chess/model"
 )
 
 func main() {
@@ -34,7 +32,6 @@ func runCommand(commandStr string) (e error) {
 	case "new":
 		// TODO Create a new game on a classic 8x8 board.
 		// TODO Display the board on console.
-		b := model.Board
 		break
 
 	case "move":
