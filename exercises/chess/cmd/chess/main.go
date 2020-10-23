@@ -33,6 +33,7 @@ func runCommand(commandStr string) (e error) {
 		// TODO Create a new game on a classic 8x8 board.
 		// TODO Display the board on console.
 		break
+
 	case "move":
 		// TODO Move a piece. (syntax: move <from> <to>)
 		// TODO The command line should be in the form of move A2 A4.
