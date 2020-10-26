@@ -3,9 +3,25 @@ package board
 import (
 	"github.com/chess/model/coord"
 	"github.com/chess/model/piece"
+	"github.com/chess/model/player"
 	"reflect"
 	"testing"
 )
+
+// mockPiece is a piece made for the test
+type mockPiece struct {
+}
+
+func (r mockPiece) String() string {
+	panic("implement me") //TODO: create function
+}
+
+func (r mockPiece) Moves() map[coord.ChessCoordinates]bool {
+	panic("implement me") //TODO: create function
+}
+func (r mockPiece) Color() player.Color {
+	panic("implement me") //TODO: create function
+}
 
 type mockCoord int
 
@@ -20,8 +36,8 @@ func (c mockCoord) String() string {
 
 func TestClassic_MovePiece(t *testing.T) {
 	class := Classic{}
-	pi := piece.Rook{}
-	pi1 := piece.Rook{}
+	pi := mockPiece{}
+	pi1 := mockPiece{}
 	coordin := coord.NewCartesian(0, 0)
 	x, _ := coordin.Coord(0)
 	y, _ := coordin.Coord(1)
@@ -39,14 +55,8 @@ func TestClassic_MovePiece(t *testing.T) {
 		name    string
 		c       Classic
 		args    args
-		wantErr bool
+		wantErr bool // true if there is an error, false if there is not.
 	}{
-		{
-			"testmock",
-			Classic{},
-			args{mockCoord(0), mockCoord(1)},
-			true,
-		},
 		{
 			"no piece at from",
 			class,
@@ -77,7 +87,7 @@ func TestClassic_MovePiece(t *testing.T) {
 
 func TestClassic_PieceAt(t *testing.T) {
 	class := Classic{}
-	pi := piece.Rook{}
+	pi := mockPiece{}
 	coordin := coord.NewCartesian(0, 0)
 	x, _ := coordin.Coord(0)
 	y, _ := coordin.Coord(1)
@@ -115,7 +125,7 @@ func TestClassic_PieceAt(t *testing.T) {
 
 func TestClassic_PlacePieceAt(t *testing.T) {
 	class := Classic{}
-	pi := piece.Rook{}
+	pi := mockPiece{}
 	coordin := coord.NewCartesian(0, 0)
 	x, _ := coordin.Coord(0)
 	y, _ := coordin.Coord(1)
@@ -128,7 +138,7 @@ func TestClassic_PlacePieceAt(t *testing.T) {
 		name    string
 		c       Classic
 		args    args
-		wantErr bool
+		wantErr bool // true if there is an error, false if there is not.
 	}{
 		{
 			"Test pass",
