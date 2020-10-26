@@ -1,6 +1,8 @@
 package coord
 
-import "testing"
+import (
+	"testing"
+)
 
 func TestNewCartesian(t *testing.T) {
 	c := NewCartesian(1, 2)

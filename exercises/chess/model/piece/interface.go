@@ -3,16 +3,25 @@ package piece
 
 import (
 	"fmt"
-
-	"github.com/jglouis/4eail40_2020/exercises/chess/model/coord"
-	"github.com/jglouis/4eail40_2020/exercises/chess/model/player"
+	"github.com/chess/model/coord"
+	"github.com/chess/model/player"
 )
 
-// Piece represents a game piece
+// Piece represents a game piece.
 type Piece interface {
 	fmt.Stringer
-	// Color returns the appartenance.
+	//
 	Color() player.Color
-	// Moves returns a set of valid move.
-	Moves(isCapture bool) map[coord.ChessCoordinates]bool
+	//
+	Moves() map[coord.ChessCoordinates]bool
+}
+
+func test() {
+	//var p Piece
+
+	//var move = destination - origin
+	// Check if move is contained in a map
+	//if p.Moves[move]
+
+	// HashSet
 }
