@@ -23,22 +23,12 @@ func (r mockPiece) Color() player.Color {
 	panic("implement me") //TODO: create function
 }
 
-type mockCoord int
-
-// Coord returns x if n==0, y if n==1
-func (c mockCoord) Coord(n int) (int, error) {
-	return int(c), nil
-}
-
-func (c mockCoord) String() string {
-	return "1"
-}
 
 func TestClassic_MovePiece(t *testing.T) {
 	class := Classic{}
 	pi := mockPiece{}
 	pi1 := mockPiece{}
-	coordin := coord.NewCartesian(0, 0)
+	coordin := coord.NewCartesian(0,0)
 	x, _ := coordin.Coord(0)
 	y, _ := coordin.Coord(1)
 	class[x][y] = pi
