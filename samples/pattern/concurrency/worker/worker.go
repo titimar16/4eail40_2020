@@ -17,10 +17,11 @@ func worker(id int, jobs <-chan int, results chan<- int) {
 func main() {
 
 	const numJobs = 5
+	const numWorkers = 3
 	jobs := make(chan int, numJobs)
 	results := make(chan int, numJobs)
 
-	for w := 1; w <= 3; w++ {
+	for w := 1; w <= numWorkers; w++ {
 		go worker(w, jobs, results)
 	}
 
