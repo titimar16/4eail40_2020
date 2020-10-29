@@ -1,12 +1,12 @@
 package main
 
-func fanOut(In <-chan int, OutA, OutB chan int) {
-	for data := range In { // receives until closes
+func fanOut(in <-chan int, outA, outB chan int) {
+	for data := range in { // receives until closes
 		select {
-		case OutA <- data:
+		case outA <- data:
 			//TODO
 			break
-		case OutB <- data:
+		case outB <- data:
 			//TODO
 			break
 		}
