@@ -23,3 +23,9 @@ type Board interface {
 	// Returns an error if destination was occupied.
 	PlacePieceAt(p piece.Piece, at coord.ChessCoordinates) error
 }
+
+//  TODO exo : Implement a ClassicBuilder (don't forget the test(s)) !
+type Builder interface {
+	AddPiece(p piece.Piece, at coord.ChessCoordinates) Builder
+	Build() Board
+}
