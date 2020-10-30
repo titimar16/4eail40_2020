@@ -1,9 +1,8 @@
 package main
 
-
 type ServiceA struct{}
 
-func NewServiceA() *ServiceA{
+func NewServiceA() *ServiceA {
 	return new(ServiceA)
 }
 
@@ -18,7 +17,7 @@ type Server struct {
 	serviceB *ServiceB
 }
 
-func NewServer() *Server{
+func NewServer() *Server {
 	return &Server{NewServiceA(), NewServiceB()} // we create the dependencies inside the constructor
 }
 

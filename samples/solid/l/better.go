@@ -1,4 +1,5 @@
 package l
+
 import "fmt"
 
 type Areaer interface {
@@ -23,6 +24,6 @@ func (s Square) Area() int {
 }
 
 func test() {
-	r := Rectangle{2,3}
+	r := Rectangle{2, 3}
 	fmt.Print("area: " + string(r.Area()))
 }
